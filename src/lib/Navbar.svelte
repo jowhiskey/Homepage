@@ -5,6 +5,8 @@
 	import { slide } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 
+	const base = import.meta.env.BASE_URL.slice(0, -1); // Remove trailing slash
+
 	let currentPath = $derived($page.url.pathname);
 	let mobileMenuOpen = $state(false);
 
@@ -20,16 +22,16 @@
 <nav class="navbar">
 	<div class="navbar-content">
 		<!-- Logo/Icon on the left -->
-		<a href="/" onclick={closeMobileMenu}>
-			<img src="/Logo.svg" alt="kiloJoule Logo" class="logo-icon" />
+		<a href="{base}/" onclick={closeMobileMenu}>
+			<img src="{base}/Logo.svg" alt="kiloJoule Logo" class="logo-icon" />
 		</a>
 
 		<!-- Center navigation links (desktop) -->
 		<div class="nav-center">
-			<a class="navlink" class:active={currentPath === '/waitlist'} href="/waitlist">Waitlist</a>
-			<a class="navlink" class:active={currentPath === '/docs'} href="/docs">Docs</a>
-			<a class="navlink" class:active={currentPath === '/blog'} href="/blog">Blog</a>
-                        <a class="navlink" class:active={currentPath === '/integral'} href="/integral">Integral</a>
+			<a class="navlink" class:active={currentPath === '/waitlist'} href="{base}/waitlist">Waitlist</a>
+			<a class="navlink" class:active={currentPath === '/docs'} href="{base}/docs">Docs</a>
+			<a class="navlink" class:active={currentPath === '/blog'} href="{base}/blog">Blog</a>
+                        <a class="navlink" class:active={currentPath === '/integral'} href="{base}/integral">Integral</a>
 		</div>
 
 		<!-- Right side: Login button + GitHub icon (desktop) -->
