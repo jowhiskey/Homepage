@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href="/static/Logo-short.svg" />
+	<link rel="icon" href="/Logo-short.svg" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link
