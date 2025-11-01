@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { Calculator, Zap, Check, TrendingUp, ChevronDown } from '@lucide/svelte';
 
+	const base = import.meta.env.BASE_URL.slice(0, -1); // Remove trailing slash
+
 	function scrollToEditor() {
 		document.getElementById('editor-demo')?.scrollIntoView({ behavior: 'smooth' });
 	}
@@ -21,8 +23,8 @@
 					beautiful, modern interface.
 				</p>
 				<div class="hero-cta">
-					<a href="/waitlist" class="cta-primary">Start for free</a>
-					<a href="/docs" class="cta-secondary">
+					<a href="{base}/waitlist" class="cta-primary">Start for free</a>
+					<a href="{base}/docs" class="cta-secondary">
 						<Calculator size={20} />
 						View Documentation
 					</a>
@@ -30,7 +32,7 @@
 			</div>
 
 			<div class="hero-image-container">
-				<img src="/hero-screenshot.png" alt="kiloJoule interface" class="hero-image" />
+				<img src="{base}/hero-screenshot.png" alt="kiloJoule interface" class="hero-image" />
 			</div>
 		</div>
 
@@ -126,7 +128,7 @@
 		<div class="final-cta-content">
 			<h2>Stop fighting your tools.</h2>
 			<p>Engineering software doesn't have to feel like it's from 1995.</p>
-			<a href="/waitlist" class="cta-primary large">Join the Waitlist</a>
+			<a href="{base}/waitlist" class="cta-primary large">Join the Waitlist</a>
 		</div>
 	</section>
 </div>
