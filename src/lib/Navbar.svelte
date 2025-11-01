@@ -22,8 +22,8 @@
 <nav class="navbar">
 	<div class="navbar-content">
 		<!-- Logo/Icon on the left -->
-		<a href="{base}/" onclick={closeMobileMenu}>
-			<img src="{base}/Logo.svg" alt="kiloJoule Logo" class="logo-icon" />
+		<a href="/" onclick={closeMobileMenu}>
+			<img src="/Logo.svg" alt="kiloJoule Logo" class="logo-icon" />
 		</a>
 
 		<!-- Center navigation links (desktop) -->
