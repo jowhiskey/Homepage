@@ -1,9 +1,6 @@
 <script lang="ts">
-	import { Calculator, Zap, Check, TrendingUp, ChevronDown } from '@lucide/svelte';
-
-	function scrollToEditor() {
-		document.getElementById('editor-demo')?.scrollIntoView({ behavior: 'smooth' });
-	}
+	import Logo from '$lib/Logo.svelte';
+import { ChartSpline, Check, TrendingUp, ChevronDown } from '@lucide/svelte';
 </script>
 
 <div class="landing-page">
@@ -12,19 +9,19 @@
 		<div class="hero-container">
 			<div class="hero-content">
 				<h1 class="hero-title">
-					Engineering,
+					Engineering Calcs,
 					<span class="gradient-text">Without Friction</span>
 				</h1>
 				<p class="hero-description">
-					kiloJoule is a modern Computer Algebra System designed for engineers. Track units
-					automatically, perform complex calculations intuitively, and collaborate seamlessly—all in a
-					beautiful, modern interface.
+                                        Wrangling engineering calculations into awkward spreadsheets? No proper math notation, no variables, no unit tracking — now there’s a better way!
+                                        <br>
+                                        <br>
+                                        Meet kiloJoule: the modern calculation tool built for engineers!
 				</p>
 				<div class="hero-cta">
-					<a href="/waitlist" class="cta-primary">Start for free</a>
-					<a href="/docs" class="cta-secondary">
-						<Calculator size={20} />
-						View Documentation
+					<a href="/waitlist" class="cta-primary">Join the waitlist</a>
+					<a href="#benefits-section" class="cta-secondary">
+						What's it all about
 					</a>
 				</div>
 			</div>
@@ -34,9 +31,9 @@
 			</div>
 		</div>
 
-		<button class="try-it-link" on:click={scrollToEditor}>
+		<a href="#editor-demo" class="try-it-link">
 			Try it out <ChevronDown size={16} />
-		</button>
+		</a>
 	</section>
 
 	<!-- Interactive Demo Section -->
@@ -53,7 +50,7 @@
 	</section>
 
 	<!-- Problem-Solution Section -->
-	<section class="benefits-section">
+	<section id="benefits-section" class="benefits-section">
 		<div class="benefits-content">
 			<h2 class="section-title">Why kiloJoule?</h2>
 			<p class="section-subtitle">
@@ -65,58 +62,61 @@
 					<div class="benefit-icon modern">
 						<TrendingUp size={24} />
 					</div>
-					<h3>Modern Interface</h3>
+					<h3>Built from scratch, baked to perfection</h3>
 					<p>
-						Forget clunky 1990s interfaces. kiloJoule brings engineering calculations into the modern
+						Forget clunky 1990s interfaces, held together by duct tape. kiloJoule brings engineering calculations into the modern
 						era with an intuitive, streamlined design that feels natural to use.
 					</p>
 				</div>
 
-				<div class="benefit-card">
-					<div class="benefit-icon units">
+                                <div class="benefit-card">
+					<div class="benefit-icon modern">
 						<Check size={24} />
 					</div>
-					<h3>Automatic Unit Tracking</h3>
+					<h3>Precision served by the gram</h3>
 					<p>
 						Never make a unit conversion error again. kiloJoule tracks units automatically throughout
 						your calculations, preventing costly mistakes and saving you time.
 					</p>
 				</div>
 
-				<div class="benefit-card">
-					<div class="benefit-icon accessible">
-						<Zap size={24} />
+                                <div class="benefit-card">
+					<div class="benefit-icon modern">
+                                                <ChartSpline size={24} />
 					</div>
-					<h3>Accessible & Affordable</h3>
+					<h3>Plotting curves as smooth as butter.</h3>
 					<p>
-						Professional engineering tools shouldn't cost thousands. kiloJoule delivers enterprise-grade
-						capabilities at a fraction of the price, with no hidden fees or licensing nightmares.
+						kiloJoule makes it easy to create and manipulate function plots, ensuring your data is always presented clearly and accurately.
 					</p>
 				</div>
 
-				<div class="benefit-card">
-					<div class="benefit-icon opensource">
+                                <div class="benefit-card">
+					<div class="benefit-icon modern">
 						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 							<circle cx="12" cy="12" r="10"></circle>
 							<path d="M12 16v-4"></path>
 							<path d="M12 8h.01"></path>
 						</svg>
 					</div>
-					<h3>Open Source</h3>
+					<h3>Every ingredient measured, every change reflected</h3>
 					<p>
-						The math formula editor and page editor are completely open source. No vendor lock-in, no black boxes—just transparent, community-driven tools you can trust and customize.
+                                                kiloJoule's cloud-based platform ensures everyone is always working with the latest version of your calculations, making teamwork seamless and efficient. All variables and parameters are tracked dynamically, so every change is instantly reflected and nothing gets lost.
 					</p>
 				</div>
-			</div>
 
-			<div class="comparison-note">
-				<p>
-					Tools like MATLAB, Mathematica, and Maple have served engineers for decades—but they were
-					built for a different era. Their steep learning curves, outdated interfaces, and
-					prohibitive costs create unnecessary barriers to engineering work. kiloJoule takes the best
-					of these systems and reimagines them for modern engineers who expect software to be
-					powerful, intuitive, and accessible.
-				</p>
+				<div class="benefit-card">
+					<div class="benefit-icon modern">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<circle cx="12" cy="12" r="10"></circle>
+							<path d="M12 16v-4"></path>
+							<path d="M12 8h.01"></path>
+						</svg>
+					</div>
+					<h3>Open-sourced, like grandma’s best recipes</h3>
+					<p>
+                                                The user interface is completely open source. Matched with a battle tested calculation engine provided through math.js, you get the perfect formula for your future-proof calculations - no vendor lock-in.
+					</p>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -125,13 +125,18 @@
 	<section class="final-cta">
 		<div class="final-cta-content">
 			<h2>Stop fighting your tools.</h2>
-			<p>Engineering software doesn't have to feel like it's from 1995.</p>
+			<p>Track your calculations better than your calories.</p>
 			<a href="/waitlist" class="cta-primary large">Join the Waitlist</a>
 		</div>
 	</section>
 </div>
 
 <style>
+
+        :global(html) {
+                scroll-behavior: smooth;
+        }
+
 	.landing-page {
 		color: #1e293b;
 		min-height: 100vh;
@@ -385,21 +390,6 @@
 		color: #3b82f6;
 	}
 
-	.benefit-icon.units {
-		background: #f5f3ff;
-		color: #8b5cf6;
-	}
-
-	.benefit-icon.accessible {
-		background: #f0fdf4;
-		color: #22c55e;
-	}
-
-	.benefit-icon.opensource {
-		background: #fff7ed;
-		color: #f97316;
-	}
-
 	.benefit-card h3 {
 		font-size: 1.4rem;
 		font-weight: 600;
@@ -411,22 +401,6 @@
 		color: #64748b;
 		line-height: 1.7;
 		font-size: 0.95rem;
-	}
-
-	.comparison-note {
-		background: #ffffff;
-		border: 1px solid #e2e8f0;
-		border-left: 3px solid #3b82f6;
-		padding: 2.5rem;
-		border-radius: 1rem;
-		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-	}
-
-	.comparison-note p {
-		color: #475569;
-		line-height: 1.8;
-		font-size: 1.05rem;
-		margin: 0;
 	}
 
 	/* Final CTA Section */
